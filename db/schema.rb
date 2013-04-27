@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130427131402) do
+ActiveRecord::Schema.define(:version => 20130427162757) do
 
   create_table "languages", :force => true do |t|
     t.string "name", :limit => 10
@@ -28,6 +28,31 @@ ActiveRecord::Schema.define(:version => 20130427131402) do
 
   add_index "locale_files", ["project_id"], :name => "index_locale_files_on_project_id"
 
+  create_table "phrase_translations", :force => true do |t|
+    t.integer  "phrase_id"
+    t.integer  "language_id"
+    t.integer  "user_id"
+    t.integer  "version_number"
+    t.string   "text"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "phrase_translations", ["language_id"], :name => "index_phrase_translations_on_language_id"
+  add_index "phrase_translations", ["phrase_id"], :name => "index_phrase_translations_on_phrase_id"
+  add_index "phrase_translations", ["user_id"], :name => "index_phrase_translations_on_user_id"
+
+  create_table "phrases", :force => true do |t|
+    t.string   "name"
+    t.string   "ancestry"
+    t.integer  "locale_file_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "phrases", ["ancestry"], :name => "index_phrases_on_ancestry"
+  add_index "phrases", ["locale_file_id"], :name => "index_phrases_on_locale_file_id"
+
   create_table "projects", :force => true do |t|
     t.string   "title"
     t.text     "description"
@@ -35,6 +60,18 @@ ActiveRecord::Schema.define(:version => 20130427131402) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
+
+  create_table "translation_histories", :force => true do |t|
+    t.integer  "phrase_translation_id"
+    t.integer  "user_id"
+    t.integer  "version_number"
+    t.string   "text"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+  end
+
+  add_index "translation_histories", ["phrase_translation_id"], :name => "index_translation_histories_on_phrase_translation_id"
+  add_index "translation_histories", ["user_id"], :name => "index_translation_histories_on_user_id"
 
   create_table "translators", :force => true do |t|
     t.integer  "user_id"
