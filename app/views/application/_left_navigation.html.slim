@@ -1,0 +1,28 @@
+nav#primary.main-nav
+  ul
+    li
+      = link_to root_path do
+        i.icon-dashboard
+        | Dashboard
+    li
+      = link_to destroy_user_session_path, :method => :delete do
+        i.icon-off
+        | Log out
+
+nav#secondary.main-nav
+  .profile-menu
+    .pull-left
+      .subtitle
+        p = current_user.email
+
+    .subtitle
+      | Your role: #{Role[current_user.role]}
+
+    .pull-right.profile-menu-nav-collapse
+      button.button.black
+        i.icon-reorder
+    .clear
+  ul.secondary-nav-menu
+    = nav_link "icon-dashboard", 'Add project', new_project_path
+
+    = nav_link "icon-dashboard", 'View all projects', projects_path

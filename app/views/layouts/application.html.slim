@@ -2,6 +2,8 @@ doctype html
 html
   = render 'head'
   body
+    - if user_signed_in?
+      = render 'left_navigation'
     section#main
       - if user_signed_in?
         = render 'top_navigation'

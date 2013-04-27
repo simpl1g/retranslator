@@ -1,0 +1,10 @@
+.row-fluid
+  .tabbable.black-box.span12
+    .tab-header Projects
+    .padded
+      h4 = @project.title
+      .black-box.well = @project.description
+
+      .separator
+        = link_to 'Edit', edit_project_path(@project), :class => 'button green'
+        = link_to 'Back', projects_path, :class => 'button blue'
