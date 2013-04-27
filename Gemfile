@@ -8,6 +8,7 @@ gem 'ancestry'
 gem 'active_enum'
 gem 'slim'
 gem 'nested_form'
+gem 'cancan'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

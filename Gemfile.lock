@@ -38,6 +38,7 @@ GEM
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
     builder (3.0.4)
+    cancan (1.6.8)
     coderay (1.0.9)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -142,6 +143,7 @@ DEPENDENCIES
   active_enum
   ancestry
   better_errors
+  cancan
   coffee-rails (~> 3.2.1)
   debugger
   devise
