@@ -1,0 +1,5 @@
+en:
+  project:
+    files:
+      add_new: 'Add new translation file'
+      remove: 'Remove file'
