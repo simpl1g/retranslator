@@ -1,0 +1,7 @@
+en:
+  active_enum:
+    role:
+      admin: Admin
+    project_type:
+      public: Public
+      private: Private

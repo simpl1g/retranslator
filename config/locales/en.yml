@@ -17,9 +17,12 @@ en:
   projects: Projects
   list_of_projects: List of projects
   title: title
-  description: description
-  owner: Owner
+  description: Description
   created_at: Created created_at
   updated_at: Updated at
   my_projects: My projects
   retranslator: ReTranslator
+  project_title: Project name
+  description: Description
+  owner: Project owner
+  type: Select a type of your project

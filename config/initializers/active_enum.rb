@@ -1,6 +1,4 @@
-# Form helper integration
-# require 'active_enum/form_helpers/formtastic'  # for Formtastic <2
-# require 'active_enum/form_helpers/formtastic2' # for Formtastic 2.x
+require 'active_enum/form_helpers/simple_form'
 
 ActiveEnum.setup do |config|
 
@@ -11,14 +9,5 @@ ActiveEnum.setup do |config|
   # config.use_name_as_value = false
 
   # Storage of values (:memory, :i18n)
-  # config.storage = :memory
-
+  config.storage = :i18n
 end
-
-# ActiveEnum.define do
-# 
-#   enum(:enum_name) do
-#     value 1 => 'Name'
-#   end
-# 
-# end
