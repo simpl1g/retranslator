@@ -6,6 +6,12 @@ class Project < ActiveRecord::Base
   validates :user, :presence => true
 
   has_many :locale_files
+  has_many :project_languages
+  has_many :languages, :through => :project_languages
+  has_many :project_users
+  has_many :involved_users, :through => :project_users, :source => :user
+  has_many :translators, :through => :involved_users, :conditions => {:project_users => {:role => Role['translator']}}
+
   belongs_to :user
 
   accepts_nested_attributes_for :locale_files, :allow_destroy => true

@@ -2,6 +2,7 @@ en:
   active_enum:
     role:
       admin: Admin
+      translator: Translator
     project_type:
       public: Public
       private: Private
