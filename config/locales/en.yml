@@ -6,6 +6,14 @@ en:
     formats:
       date: "%d/%m/%Y"
       date_with_time: "%d/%m/%Y %H:%M"
+  project:
+    headers:
+      title: Title
+      description: Description
+      progress: Progress
+      created_at: Created at
+      updated_at: Updated at
+      owner: Owner
   no_projects: No projects created yet
   new_project: New project
   actions: Actions
@@ -16,13 +24,7 @@ en:
   are_you_sure: Are you sure?
   projects: Projects
   list_of_projects: List of projects
-  title: title
-  description: Description
-  created_at: Created created_at
-  updated_at: Updated at
   my_projects: My projects
   retranslator: ReTranslator
   project_title: Project name
-  description: Description
-  owner: Project owner
   type: Select a type of your project

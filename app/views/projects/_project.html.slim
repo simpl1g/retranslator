@@ -1,7 +1,7 @@
 tr
   td = link_to project.title, project_path(project)
-  td = project.description
   td = project.owner.email
+  td 10%
   td = l project.created_at, :format => :date
   td = l project.updated_at, :format => :date_with_time
 

@@ -22,8 +22,10 @@ ActiveRecord::Schema.define(:version => 20130427172650) do
   create_table "locale_files", :force => true do |t|
     t.string   "file"
     t.integer  "project_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.string   "name",                      :null => false
+    t.integer  "file_type",  :default => 0, :null => false
   end
 
   add_index "locale_files", ["project_id"], :name => "index_locale_files_on_project_id"
