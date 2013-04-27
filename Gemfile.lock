@@ -1,3 +1,25 @@
+GIT
+  remote: git://github.com/Compass/compass-rails.git
+  revision: 47d889ad8dabdab1e9f44da4447f94846c089c50
+  specs:
+    compass-rails (1.0.0.rc.3)
+      compass (~> 0.12.rc.0)
+
+GIT
+  remote: git://github.com/rails/coffee-rails.git
+  revision: c8f3df3369f0d5b32dbc57cf3fd575b50d106563
+  branch: 3-2-stable
+  specs:
+    coffee-rails (3.2.2)
+      coffee-script (>= 2.2.0)
+      railties (~> 3.2.0)
+
+GIT
+  remote: git://github.com/rails/sass-rails.git
+  revision: 0e2c205ec8b131dff103c13de2f9cd7f4938b18f
+  branch: 3-2-stable
+  specs:
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -41,16 +63,18 @@ GEM
       json (~> 1.7.3)
       nokogiri (~> 1.5.0)
     builder (3.0.4)
-    cancan (1.6.9)
+    cancan (1.6.8)
+    chunky_png (1.2.8)
     coderay (1.0.9)
-    coffee-rails (3.2.2)
-      coffee-script (>= 2.2.0)
-      railties (~> 3.2.0)
     coffee-script (2.2.0)
       coffee-script-source
       execjs
     coffee-script-source (1.6.2)
     columnize (0.3.6)
+    compass (0.13.alpha.4)
+      chunky_png (~> 1.2)
+      listen (<= 0.9.9)
+      sass (~> 3.2.5)
     debugger (1.5.0)
       columnize (>= 0.3.1)
       debugger-linecache (~> 1.2.0)
@@ -65,16 +89,19 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    fancybox-rails (0.1.4)
+      railties (>= 3.1.0)
+    gon (4.0.2)
+      actionpack (>= 2.3.0)
+      json
     hike (1.2.2)
     i18n (0.6.4)
     journey (1.0.4)
     jquery-rails (2.2.1)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
-    jquery-ui-rails (4.0.2)
-      jquery-rails
-      railties (>= 3.1.0)
     json (1.7.7)
+    listen (0.7.3)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -150,15 +177,17 @@ DEPENDENCIES
   better_errors
   bing_translator (~> 3.0.0)
   cancan
-  coffee-rails (~> 3.2.1)
+  coffee-rails!
+  compass-rails!
   debugger
   devise
+  fancybox-rails
+  gon
   jquery-rails
-  jquery-ui-rails
   nested_form
   pg
   rails (= 3.2.12)
-  sass-rails (~> 3.2.3)
+  sass-rails!
   settingslogic
   simple_form
   slim

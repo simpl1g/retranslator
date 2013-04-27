@@ -11,12 +11,14 @@ gem 'nested_form'
 gem 'cancan'
 gem 'bing_translator', '~> 3.0.0'
 gem 'settingslogic'
+gem 'jquery-rails'
+gem 'fancybox-rails'
+gem 'gon'
 
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'jquery-ui-rails'
-
+  gem 'sass-rails',    :git => 'git://github.com/rails/sass-rails.git', :branch => '3-2-stable'
+  gem 'compass-rails', :git => 'git://github.com/Compass/compass-rails.git'
+  gem 'coffee-rails',  :git => 'git://github.com/rails/coffee-rails.git', :branch => '3-2-stable'
   gem 'uglifier', '>= 1.0.3'
 end
 
@@ -24,5 +26,3 @@ group :development do
   gem 'better_errors'
   gem 'debugger'
 end
-
-gem 'jquery-rails'

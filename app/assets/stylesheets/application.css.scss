@@ -1,0 +1,36 @@
+// Set the correct sprite paths
+$iconSpritePath: image-path('/assets/glyphicons-halflings.png');
+$iconWhiteSpritePath: image-path('/assets/font/glyphicons-halflings-white.png');
+
+@import "variables";
+@import "mixin_helpers";
+@import "_bootstrap";
+@import "responsive";
+
+@import "chosen";
+@import "chosen_fix";
+@import "layout";
+@import "form_elements";
+@import "base";
+@import "typography";
+@import "widgets/interactive_tables";
+@import "widgets/datepicker";
+@import "widgets/login";
+@import "breadcrumbs";
+@import "fixes";
+@import "font-awesome";
+@import "buttons";
+@import "modals";
+@import "checkboxes";
+@import "docs";
+@import "widgets/avatar";
+@import "navs";
+@import "tables";
+@import "animations";
+@import "notifications";
+@import "search";
+
+@import "responsive-max1024";
+@import "responsive-max768";
+@import "responsive-max480";
+@import "fancybox";

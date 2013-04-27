@@ -1,0 +1,10 @@
+doctype html
+html
+  = render 'head'
+  body
+    section#main
+      - if user_signed_in?
+        = render 'top_navigation'
+      .container-fluid
+        = yield
+    = render 'notifications'

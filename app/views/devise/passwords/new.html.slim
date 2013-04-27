@@ -1,0 +1,8 @@
+.login-wrapper
+  h3 Forgot your password?
+  = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f|
+    = devise_error_messages!
+    div
+      = f.email_field :email, :placeholder => 'Enter your email address'
+    div= f.submit "Send me reset password instructions", :class => "login-button"
+  = render "devise/shared/links"
