@@ -1,11 +1,16 @@
 .row-fluid
   .tabbable.black-box.span12
-    .tab-header = @project.title
+    .tab-header
+      = @project.title
+      span.pull-right
+        span.options
+          = link_to edit_project_path(@project) do
+            i.icon-cog
     .padded
       .black-box.well = @project.description
       h5 Files
       = render :partial => "project/locale_files/locale_files", :object => @project.locale_files
-
+      = link_to edit_project_path(@project), :class => 'button green' do
+        i.icon-plus
+        =t('links.add_files')
       .separator
-        = link_to t(:edit), edit_project_path(@project), :class => 'button green'
-        = link_to t(:back), projects_path, :class => 'button blue'

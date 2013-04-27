@@ -14,6 +14,41 @@ class LocaleFile < ActiveRecord::Base
 
   before_validation :set_default_file_name
 
+  def import_phrases(user, hash, language)
+    self.class.transaction do
+      add_phrases(user, hash, language)
+    end
+  end
+
+  def add_phrases(user, hash, language, parent=nil)
+    hash.each do |key, value|
+      case value.class.to_s
+      when "String"
+        phrase = add_phrase(key, value, user, language, parent)
+      when "Array"
+        value.each do |element|
+          phrase = add_complicated_phrase(key)
+          add_phrases(user, element, language, phrase)
+        end
+      when "Hash"
+        phrase = add_complicated_phrase(key)
+        logger.debug("user=#{user}, value=#{value}, language=#{language}, phrase=#{phrase}")
+        add_phrases(user, value, language, phrase)
+      else
+        raise "Error"
+      end
+    end
+  end
+
+  def add_phrase(key, value, user, language, parent)
+    phrase = phrases.create(:name => key, :complicated => false, :parent => parent, :phrase_translations_attributes => [{:value => value, :user_id => user.id, :language_id => language.id}])
+  end
+
+  def add_complicated_phrase(key)
+    phrase = phrases.create(:name => key, :complicated => true)
+  end
+
+
   private
 
   def set_default_file_name
