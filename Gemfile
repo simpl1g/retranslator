@@ -14,11 +14,14 @@ gem 'settingslogic'
 gem 'jquery-rails'
 gem 'fancybox-rails'
 gem 'gon'
+gem 'carrierwave'
 
 group :assets do
   gem 'sass-rails',    :git => 'git://github.com/rails/sass-rails.git', :branch => '3-2-stable'
   gem 'compass-rails', :git => 'git://github.com/Compass/compass-rails.git'
   gem 'coffee-rails',  :git => 'git://github.com/rails/coffee-rails.git', :branch => '3-2-stable'
+  gem 'jquery-fileupload-rails'
+
   gem 'uglifier', '>= 1.0.3'
 end
 
