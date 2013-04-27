@@ -11,7 +11,7 @@
         .span8
           .black-box.well = @project.description
           h5 Files
-          = render :partial => "project/locale_files/locale_files", :object => @project.locale_files
+          = render :partial => "locale_files/locale_files", :object => @project.locale_files
           = link_to edit_project_path(@project), :class => 'button green' do
             i.icon-plus
             = t('links.add_files')
