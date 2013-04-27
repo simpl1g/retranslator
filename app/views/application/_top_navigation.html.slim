@@ -1,0 +1,14 @@
+.top-nav
+  .container-fluid
+    .row-fluid.search-button-bar-container
+      .span12
+        ul.breadcrumb
+          li
+            a href="/"
+              i.icon-home
+              | Home
+          li
+            = link_to destroy_user_session_path, :method => :delete do
+              i.icon-off
+              | Log out
+
