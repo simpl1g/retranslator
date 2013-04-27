@@ -11,7 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130427123756) do
+ActiveRecord::Schema.define(:version => 20130427131402) do
+
+  create_table "languages", :force => true do |t|
+    t.string "name", :limit => 10
+  end
+
+  add_index "languages", ["name"], :name => "index_languages_on_name", :unique => true
 
   create_table "projects", :force => true do |t|
     t.string   "title"
@@ -19,6 +25,22 @@ ActiveRecord::Schema.define(:version => 20130427123756) do
     t.integer  "user_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "translators", :force => true do |t|
+    t.integer  "user_id"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "translators", ["user_id"], :name => "index_translators_on_user_id", :unique => true
+
+  create_table "translators_languages", :force => true do |t|
+    t.integer "translator_id_id"
+    t.integer "language_id_id"
+    t.integer "level",            :limit => 2
+    t.text    "description"
   end
 
   create_table "users", :force => true do |t|
