@@ -1,9 +1,10 @@
 .row-fluid
   .tabbable.black-box.span12
-    .tab-header = t(:projects)
+    .tab-header = @project.title
     .padded
-      h4 = @project.title
       .black-box.well = @project.description
+      h5 Files
+      =render :partial => "locale_files/locale_files", :object =>@project.locale_files
 
       .separator
         = link_to t(:edit), edit_project_path(@project), :class => 'button green'

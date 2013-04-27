@@ -1,19 +1,17 @@
 .row-fluid
   .tabbable.black-box.span12
-    .tab-header Projects
+    .tab-header Public projects
     .padded
       - if @projects.present?
-        h5 = t(:list_of_projects)
         table.table.table-striped.table-bordered
           thead
             tr
-              th = t(:title)
-              th = t(:description)
-              th = t(:owner)
-              th = t(:created_at)
-              th = t(:updated_at)
+              th = t(:project.headers.title)
+              th = t(:project.headers.progress)
+              th = t(:project.headers.owner)
+              th = t(:project.headers.created_at)
+              th = t(:project.headers.updated_at)
               th = t(:actions)
-
           = render @projects
 
       - else

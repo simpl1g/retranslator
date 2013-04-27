@@ -28,4 +28,6 @@ end
 group :development do
   gem 'better_errors'
   gem 'debugger'
+  gem 'pry'
+  gem 'pry-debugger'
 end
