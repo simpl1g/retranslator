@@ -3,3 +3,4 @@ en:
     files:
       add_new: 'Add new translation file'
       remove: 'Remove file'
+      title: 'Locale Files'
