@@ -6,4 +6,5 @@ class LocaleFile < ActiveRecord::Base
   attr_accessible :file
 
   belongs_to :project
+  has_many :phrases, :dependent => :destroy
 end
