@@ -1,10 +1,20 @@
-<%= simple_form_for(@project) do |f| %>
+<%= simple_nested_form_for @project, :html => {:class => 'fill-up', :multipart => true} do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%=f.input :title%>
-    <%=f.input :description%>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.fields_for :locale_files do |attachments_form| %>
+      <%= attachments_form.input :file, :as => :file %>
+      <%= attachments_form.link_to_remove :class => 'button red' do %>
+        <%= t('project.files.remove') %>
+      <% end %>
+    <% end %>
   </div>
+
+  <%= f.link_to_add :locale_files, :class => 'button' do %>
+    <%= t('project.files.add_new') %>
+  <% end %>
 
   <div class="form-actions">
     <%= f.button :submit %>
