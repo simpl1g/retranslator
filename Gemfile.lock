@@ -37,8 +37,11 @@ GEM
     better_errors (0.8.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
+    bing_translator (3.0.0)
+      json (~> 1.7.3)
+      nokogiri (~> 1.5.0)
     builder (3.0.4)
-    cancan (1.6.8)
+    cancan (1.6.9)
     coderay (1.0.9)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -79,6 +82,7 @@ GEM
     mime-types (1.23)
     multi_json (1.7.2)
     nested_form (0.3.2)
+    nokogiri (1.5.9)
     orm_adapter (0.4.0)
     pg (0.15.1)
     polyglot (0.3.3)
@@ -112,6 +116,7 @@ GEM
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
+    settingslogic (2.0.9)
     simple_form (2.1.0)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
@@ -143,6 +148,7 @@ DEPENDENCIES
   active_enum
   ancestry
   better_errors
+  bing_translator (~> 3.0.0)
   cancan
   coffee-rails (~> 3.2.1)
   debugger
@@ -153,6 +159,7 @@ DEPENDENCIES
   pg
   rails (= 3.2.12)
   sass-rails (~> 3.2.3)
+  settingslogic
   simple_form
   slim
   uglifier (>= 1.0.3)

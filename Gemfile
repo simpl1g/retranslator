@@ -9,6 +9,8 @@ gem 'active_enum'
 gem 'slim'
 gem 'nested_form'
 gem 'cancan'
+gem 'bing_translator', '~> 3.0.0'
+gem 'settingslogic'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
