@@ -1,0 +1,16 @@
+.login-wrapper
+  #login-manager
+    #login.login-wrapper.animated
+      = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+        .input-group
+          = f.input :email, :label => false, :input_html => { :class => 'input-transparent' }, :placeholder => "email"
+          = f.input :password, :label => false, :input_html => { :class => 'input-transparent' }, :placeholder => "enter password"
+        - if devise_mapping.rememberable?
+          .user_remember_me
+            = f.input_field :remember_me, as: :boolean, :id => "asd", :class => "checky"
+            label.checky for="asd"
+              span
+            label.checktext for="asd" remember me
+
+          = f.button :submit, "Login", :class => 'login-button', :id => "login-submit"
+  = render "devise/shared/links"
