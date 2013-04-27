@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130427162757) do
+ActiveRecord::Schema.define(:version => 20130427172650) do
 
   create_table "languages", :force => true do |t|
     t.string "name", :limit => 10
@@ -57,8 +57,9 @@ ActiveRecord::Schema.define(:version => 20130427162757) do
     t.string   "title"
     t.text     "description"
     t.integer  "user_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "project_type"
   end
 
   create_table "translation_histories", :force => true do |t|
