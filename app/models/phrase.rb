@@ -1,8 +1,23 @@
 class Phrase < ActiveRecord::Base
-  attr_accessible :ancestry, :name
+  belongs_to :locale_file
+  has_many :phrase_translations
+
+  attr_accessible :ancestry, :name, :phrase_translations_attributes, :complicated, :parent
 
   validates :name, :presence => true
 
-  belongs_to :locale_file
-  has_many :phrase_translations
+  accepts_nested_attributes_for :phrase_translations
+
+  has_ancestry
+
+  before_validation(:on => :create) do
+    if phrase_translations
+      phrase_translations.each { |ph| ph.phrase = self }
+    end
+  end
+
+  class << self
+
+  end
+
 end

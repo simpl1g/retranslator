@@ -34,10 +34,10 @@ ActiveRecord::Schema.define(:version => 20130427202704) do
     t.integer  "phrase_id"
     t.integer  "language_id"
     t.integer  "user_id"
-    t.integer  "version_number"
-    t.string   "text"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.integer  "version_number", :default => 0, :null => false
+    t.string   "value"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   add_index "phrase_translations", ["language_id"], :name => "index_phrase_translations_on_language_id"
@@ -48,8 +48,9 @@ ActiveRecord::Schema.define(:version => 20130427202704) do
     t.string   "name"
     t.string   "ancestry"
     t.integer  "locale_file_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
+    t.boolean  "complicated",    :default => false, :null => false
   end
 
   add_index "phrases", ["ancestry"], :name => "index_phrases_on_ancestry"
@@ -88,10 +89,10 @@ ActiveRecord::Schema.define(:version => 20130427202704) do
   create_table "translation_histories", :force => true do |t|
     t.integer  "phrase_translation_id"
     t.integer  "user_id"
-    t.integer  "version_number"
-    t.string   "text"
-    t.datetime "created_at",            :null => false
-    t.datetime "updated_at",            :null => false
+    t.integer  "version_number",        :default => 0, :null => false
+    t.string   "value"
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
   end
 
   add_index "translation_histories", ["phrase_translation_id"], :name => "index_translation_histories_on_phrase_translation_id"
