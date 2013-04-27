@@ -6,6 +6,6 @@ tr
   td = l project.updated_at, :format => :date_with_time
 
   td.action-links
-    = link_to 'Edit', edit_project_path(project)
-    = link_to 'Destroy', project_path(project), method: :delete, data: { confirm: 'Are you sure?' }
+    = link_to t(:edit), edit_project_path(project)
+    = link_to t(:destroy), project_path(project), method: :delete, data: { confirm: t(:are_you_sure) }
 

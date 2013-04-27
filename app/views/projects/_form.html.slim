@@ -1,6 +1,6 @@
 .row-fluid
   .tabbable.black-box.span7
-    .tab-header Project form
+    .tab-header = t(:project_form)
     = simple_nested_form_for @project, :html => { :class => 'fill-up' } do |f|
       = f.error_notification
       .padded
@@ -14,5 +14,5 @@
             = t('project.files.add_new')
       .padded
         p = f.button :submit, :class => "button green"
-        p = link_to 'Back', projects_path, :class => "button blue", :style =>'width:100%'
+        p = link_to t(:back), projects_path, :class => "button blue", :style =>'width:100%'
 

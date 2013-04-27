@@ -1,0 +1,7 @@
+en:
+  activerecord:
+    attributes:
+      project:
+        title: Project name
+        description: Description
+        owner: Owner

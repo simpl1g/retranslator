@@ -4,9 +4,13 @@
       .span12
         ul.breadcrumb
           li
-            a href="/"
+            = link_to root_path do
               i.icon-home
               | Home
+          li
+            = link_to dashboard_path do
+              i.icon-dashboard
+              | Dashboard
           li
             = link_to destroy_user_session_path, :method => :delete do
               i.icon-off

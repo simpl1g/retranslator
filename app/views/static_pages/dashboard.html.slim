@@ -1,8 +1,8 @@
 .row-fluid
-  .tabbable.black-box.span12
-    .tab-header Projects
+  .tabbable.black-box.span8
+    .tab-header = t(:my_projects)
     .padded
-      - if @projects.present?
+      - if current_user.projects.present?
         h5 = t(:list_of_projects)
         table.table.table-striped.table-bordered
           thead
@@ -14,12 +14,11 @@
               th = t(:updated_at)
               th = t(:actions)
 
-          = render @projects
+          = render :partial => 'current_user_projects', :locals => { :projects => current_user.projects }
 
       - else
         .separator
           h5 = t(:no_projects)
     .padded
       .padded_area.clearfix
-        b = t(:you_can_create)
         = link_to t(:new_project), new_project_path, :class => 'button green'
