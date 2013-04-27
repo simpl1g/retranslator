@@ -5,8 +5,8 @@ SimpleForm.setup do |config|
   # wrapper, change the order or even add your own to the
   # stack. The options given below are used to wrap the
   # whole input.
-  config.wrappers :default, :class => :input,
-    :hint_class => :field_with_hint, :error_class => :field_with_errors do |b|
+  config.wrappers :default, :class => 'control-group' ,
+    :hint_class => :field_with_hint, :error_class => :error do |b|
     ## Extensions enabled by default
     # Any of these extensions can be disabled for a
     # given input by passing: `f.input EXTENSION_NAME => false`.
@@ -42,7 +42,7 @@ SimpleForm.setup do |config|
     ## Inputs
     b.use :label_input
     b.use :hint,  :wrap_with => { :tag => :span, :class => :hint }
-    b.use :error, :wrap_with => { :tag => :span, :class => :error }
+    b.use :error, :wrap_with => { :tag => :span, :class => 'help-inline' }
   end
 
   # The default wrapper to be used by the FormBuilder.
@@ -55,7 +55,7 @@ SimpleForm.setup do |config|
   config.boolean_style = :inline
 
   # Default class for buttons
-  config.button_class = ''
+  config.button_class = nil
 
   # Method used to tidy up errors. Specify any Rails Array method.
   # :first lists the first message for each field.
@@ -104,7 +104,8 @@ SimpleForm.setup do |config|
   # config.generate_additional_classes_for = [:wrapper, :label, :input]
 
   # Whether attributes are required by default (or not). Default is true.
-  # config.required_by_default = true
+  # If model attribute have validation, field will be required (*)
+  config.required_by_default = true
 
   # Tell browsers whether to use default HTML5 validations (novalidate option).
   # Default is enabled.
@@ -124,9 +125,6 @@ SimpleForm.setup do |config|
 
   # Default priority for time_zone inputs.
   # config.time_zone_priority = nil
-
-  # Default priority for country inputs.
-  # config.country_priority = nil
 
   # Default size for text inputs.
   # config.default_input_size = 50
