@@ -1,16 +1,7 @@
-nav#primary.main-nav
-  ul
-    li
-      = link_to root_path do
-        i.icon-dashboard
-        | Dashboard
-    li
-      = link_to destroy_user_session_path, :method => :delete do
-        i.icon-off
-        | Log out
-
 nav#secondary.main-nav
   .profile-menu
+    .logo.pull-left
+      h3 = t(:retranslator)
     .pull-left
       .subtitle
         p = current_user.email

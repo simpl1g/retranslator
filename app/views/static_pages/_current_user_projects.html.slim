@@ -1,0 +1,12 @@
+- projects.each do |project|
+  tr
+    td = link_to project.title, project_path(project)
+    td = truncate(project.description, :length => 20)
+    td = project.owner.email
+    td = l project.created_at, :format => :date
+    td = l project.updated_at, :format => :date_with_time
+
+    td.action-links
+      = link_to t(:edit), edit_project_path(project)
+      = link_to t(:destroy), project_path(project), method: :delete, data: { confirm: t(:are_you_sure) }
+

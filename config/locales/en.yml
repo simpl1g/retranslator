@@ -6,3 +6,20 @@ en:
     formats:
       date: "%d/%m/%Y"
       date_with_time: "%d/%m/%Y %H:%M"
+  no_projects: No projects created yet
+  new_project: New project
+  actions: Actions
+  project_form: Project form
+  back: Back
+  edit: Edit
+  destroy: Destroy
+  are_you_sure: Are you sure?
+  projects: Projects
+  list_of_projects: List of projects
+  title: title
+  description: description
+  owner: Owner
+  created_at: Created created_at
+  updated_at: Updated at
+  my_projects: My projects
+  retranslator: ReTranslator
