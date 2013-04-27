@@ -14,6 +14,8 @@ en:
       created_at: Created at
       updated_at: Updated at
       owner: Owner
+  links:
+    add_files: Add files
   no_projects: No projects created yet
   new_project: New project
   actions: Actions

@@ -1,10 +1,10 @@
 class TranslationHistory < ActiveRecord::Base
-  attr_accessible :text, :user_id, :version_number
+  attr_accessible :value, :user_id, :version_number
 
   belongs_to :phrase_translation
   belongs_to :user
 
-  validates :text, :user, :phrase_translation, :version_number, :presence => true
+  validates :value, :user, :phrase_translation, :version_number, :presence => true
   validates :version_number, :uniqueness => {:scope => :phrase_translation_id}
 
   after_save :update_version_number
