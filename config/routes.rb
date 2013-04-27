@@ -1,5 +1,10 @@
 Retranslator::Application.routes.draw do
-  resources :projects
+
+  resources :projects do
+    scope :module => "project" do
+      resources :locale_files
+    end
+  end
 
   devise_for :users
 
