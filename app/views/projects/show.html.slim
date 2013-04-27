@@ -7,10 +7,22 @@
           = link_to edit_project_path(@project) do
             i.icon-cog
     .padded
-      .black-box.well = @project.description
-      h5 Files
-      = render :partial => "project/locale_files/locale_files", :object => @project.locale_files
-      = link_to edit_project_path(@project), :class => 'button green' do
-        i.icon-plus
-        =t('links.add_files')
-      .separator
+      .row-fluid
+        .span8
+          .black-box.well = @project.description
+          h5 Files
+          = render :partial => "project/locale_files/locale_files", :object => @project.locale_files
+          = link_to edit_project_path(@project), :class => 'button green' do
+            i.icon-plus
+            = t('links.add_files')
+
+        .span4
+          .black-box.well
+            = link_to "Add Translator", '#', :id => 'add-translator', :class => 'button green'
+            = render :partial => 'translators', :locals => {:translators => @project.translators}
+
+div.modal.hide.black-box#add-translator-modal
+  .modal-header.tab-header
+    button.close type="button" data-dismiss="modal" ×
+    span Add translator
+  .modal-body cdfhcvb

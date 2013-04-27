@@ -1,0 +1,4 @@
+ul
+  - translators.each do |translator|
+    li = translator.user.name
+    li = translator.languages.map(&:name).join(', ')
