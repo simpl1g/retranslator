@@ -21,7 +21,6 @@ rerun.txt
 .rvmrc
 .~lock*
 .idea
-database.yml.example
 /public/uploads
 /public/system
 /public/sitemaps

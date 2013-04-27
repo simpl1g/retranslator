@@ -1,0 +1,23 @@
+development:
+  adapter: postgresql
+  encoding: utf8
+  database: retranslator_development
+  pool: 5
+  username: postgres
+  password: qwert123
+
+test:
+  adapter: postgresql
+  encoding: utf8
+  database: retranslator_test
+  pool: 5
+  username: postgres
+  password: qwert123
+
+production:
+  adapter: postgresql
+  encoding: utf8
+  database: retranslator_production
+  pool: 5
+  username: postgres
+  password: qwert123
