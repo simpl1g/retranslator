@@ -4,3 +4,6 @@ en:
       add_new: 'Add new translation file'
       remove: 'Remove file'
       title: 'Locale Files'
+    translators:
+      add: 'Add Translator'
+      remove: 'Remove Translator'

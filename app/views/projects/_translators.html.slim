@@ -1,4 +1,5 @@
-ul
-  - translators.each do |translator|
-    li = translator.user.name
-    li = translator.languages.map(&:name).join(', ')
+- translators.each do |translator|
+  tr
+    td = translator.user.email
+    td = translator.languages.map(&:name).join(', ')
+    td = link_to t('project.translators.remove'), project_translator_path(@project, translator), :method => :delete, :class => 'button red'

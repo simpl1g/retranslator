@@ -18,11 +18,8 @@
 
         .span4
           .black-box.well
-            = link_to "Add Translator", '#', :id => 'add-translator', :class => 'button green'
-            = render :partial => 'translators', :locals => {:translators => @project.translators}
+            = link_to t('project.translators.add'), '#', :id => 'add-translator', :class => 'button green'
+            table.table.table-stripped.table-bordered
+              = render :partial => 'translators', :locals => {:translators => @project.translators}
 
-div.modal.hide.black-box#add-translator-modal
-  .modal-header.tab-header
-    button.close type="button" data-dismiss="modal" ×
-    span Add translator
-  .modal-body cdfhcvb
+= render 'project/translators/add'

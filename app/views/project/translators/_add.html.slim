@@ -1,0 +1,12 @@
+div.modal.hide.black-box#add-translator-modal
+  .modal-header.tab-header
+    button.close type="button" data-dismiss="modal" ×
+    span Add translator
+  .modal-body
+    .black-box.well
+      = form_tag project_translators_path(@project) do
+        = select_tag :language, options_for_select(Language.all.map { |lang| [t(lang.name, :scope => 'language'), lang.name] }), \
+          :class => 'dynamic-selectable', :data => {'dynamic-selectable-url' => translators_language_path(':language_id'), 'dynamic-selectable-target' => '#translator'}, :autocomplete => false
+        = select_tag :translator, '', :class => 'hide'
+        br
+        = submit_tag 'Add', :class => 'button blue'

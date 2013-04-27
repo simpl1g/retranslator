@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130427202704) do
+ActiveRecord::Schema.define(:version => 20130427221757) do
 
   create_table "languages", :force => true do |t|
     t.string "name", :limit => 10
@@ -108,9 +108,9 @@ ActiveRecord::Schema.define(:version => 20130427202704) do
   add_index "translators", ["user_id"], :name => "index_translators_on_user_id", :unique => true
 
   create_table "translators_languages", :force => true do |t|
-    t.integer "translator_id_id"
-    t.integer "language_id_id"
-    t.integer "level",            :limit => 2
+    t.integer "translator_id"
+    t.integer "language_id"
+    t.integer "level",         :limit => 2
     t.text    "description"
   end
 
