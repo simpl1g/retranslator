@@ -1,0 +1,12 @@
+defaults: &defaults
+  bing_client_id: 'reTranslator'
+  bing_client_secret: 'c59LjX30uzrJpjKABYMfAiQihhiPVepygMs2VuOXFRE='
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
