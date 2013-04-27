@@ -62,3 +62,6 @@ ActionController::RoutingError (No route matches [GET] "/"):
 
 
   Rendered /home/extazystas/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
