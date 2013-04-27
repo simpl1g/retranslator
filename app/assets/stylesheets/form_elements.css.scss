@@ -257,8 +257,16 @@ textarea {
   }
 }
 
-
-#isp_product_overridable_line_rental {
+input.boolean, input[type='radio'] {
   float: left;
   width: 20px;
+}
+
+.to_right {
+  float: right;
+}
+
+.action-links a {
+  margin-right: 10px;
+  color: #147CB9;
 }

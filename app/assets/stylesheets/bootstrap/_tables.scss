@@ -150,8 +150,33 @@ table {
     tr:nth-child(odd) td,
     tr:nth-child(odd) th {
       background-color: $tableBackgroundAccent;
+      color: #222;
     }
   }
+}
+
+.table-striped {
+  tbody {
+    tr:nth-child(even) td,
+    tr:nth-child(even) th {
+      background-color: #eee;
+      color: #111;
+    }
+  }
+}
+
+
+
+.table-striped thead {
+  background-color: #222;
+}
+
+.table-striped td, .table-striped a {
+  text-shadow: none;
+}
+
+.table-striped a {
+  color: blue;
 }
 
 

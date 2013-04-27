@@ -1,0 +1,25 @@
+.row-fluid
+  .tabbable.black-box.span12
+    .tab-header Projects
+    .padded
+      - if @projects.present?
+        h5 List of projects
+        table.table.table-striped.table-bordered
+          thead
+            tr
+              th Title
+              th Description
+              th Owner
+              th Created at
+              th Updated at
+              th Actions
+
+          = render @projects
+
+      - else
+        .separator
+          h5 No projects created yet
+    .padded
+      .padded_area.clearfix
+        b You can create your own project!
+        = link_to 'New Project', new_project_path, :class => 'button green'

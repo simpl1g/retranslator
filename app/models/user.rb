@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   enumerate :role, :with => Role
   has_one :translator
 
+  has_many :projects
+
   def is? role_name
     self.role == Role[role_name]
   end

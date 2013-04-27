@@ -1,0 +1,18 @@
+.row-fluid
+  .tabbable.black-box.span7
+    .tab-header Project form
+    = simple_nested_form_for @project, :html => { :class => 'fill-up' } do |f|
+      = f.error_notification
+      .padded
+        = f.input :title
+        = f.input :description, input_html: { rows: 8 }
+        = f.fields_for :locale_files do |attachments_form|
+          = attachments_form.input :file, :as => :file
+          = attachments_form.link_to_remove :class => 'button red' do
+            = t('project.files.remove')
+        = f.link_to_add :locale_files, :class => 'button' do
+            = t('project.files.add_new')
+      .padded
+        p = f.button :submit, :class => "button green"
+        p = link_to 'Back', projects_path, :class => "button blue", :style =>'width:100%'
+
