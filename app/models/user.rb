@@ -10,6 +10,6 @@ class User < ActiveRecord::Base
   has_many :projects
 
   def is? role_name
-    self.role == Role[role_name]
+    role == Role[role_name]
   end
 end

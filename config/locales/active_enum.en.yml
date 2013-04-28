@@ -6,3 +6,11 @@ en:
     project_type:
       public: Public
       private: Private
+    language_level:
+      beginner: Beginner
+      elementary: Elementary
+      pre_intermediate: Pre Intermediate
+      intermediate: Intermediate
+      upper_intermediate: Upper Intermediate
+      advanced: Advanced
+      proficiency: Proficiency

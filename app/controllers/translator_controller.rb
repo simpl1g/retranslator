@@ -31,8 +31,8 @@ class TranslatorController < ApplicationController
   end
 
   def create
-    params[:translator][:id] = current_user.id
-    @translator = current_user.build_translator(params[:translator])
+    # params[:translator][:id] = current_user.id
+    @translator = current_user.build_translator params[:translator]
 
     respond_to do |format|
       if @translator.save

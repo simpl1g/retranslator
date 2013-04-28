@@ -1,3 +1,12 @@
-h1 PROFILE SHOW PAGE
-- if !(/missing+/ =~ @translator.avatar.url)
-  p = image_tag @translator.avatar.url(:medium), :class => "img-polaroid"
+.span6.box
+  .tab-header Translator page
+  .padded
+    h3 = @translator.name
+    - if !(/missing+/ =~ @translator.avatar.url)
+      p = image_tag @translator.avatar.url(:medium), :class => "img-polaroid"
+    h5 = t('translator.known_list')
+    table.table
+      - @translator.languages.each do |language|
+        tr
+          td = language.title
+          td = LanguageLevel[language.level]

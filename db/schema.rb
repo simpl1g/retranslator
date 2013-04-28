@@ -11,13 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130427222509) do
+ActiveRecord::Schema.define(:version => 20130428093408) do
 
   create_table "languages", :force => true do |t|
-    t.string "name", :limit => 10
+    t.string  "name",  :limit => 10
+    t.integer "level",               :default => 1
   end
-
-  add_index "languages", ["name"], :name => "index_languages_on_name", :unique => true
 
   create_table "locale_files", :force => true do |t|
     t.string   "file"
@@ -115,7 +114,6 @@ ActiveRecord::Schema.define(:version => 20130427222509) do
   create_table "translators_languages", :force => true do |t|
     t.integer "translator_id"
     t.integer "language_id"
-    t.integer "level",         :limit => 2
     t.text    "description"
   end
 

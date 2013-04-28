@@ -9,6 +9,7 @@
         = f.file_field :avatar, :class => 'file_field'
         = f.fields_for :languages do |language|
           = language.select :name, :collection => Language.languages_for_select
+          = language.input :level
           = language.link_to_remove do
             i.icon-remove
             |  Remove this language

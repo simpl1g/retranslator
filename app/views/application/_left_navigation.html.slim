@@ -8,9 +8,11 @@ nav#secondary.main-nav
         .title
           = link_to 'Become a translator', new_translator_path, :class => 'button mini inset black'
       - else
+        .username = current_user.translator.name
         .subtitle
-          | Your role: #{Role[current_user.role]}
-          = link_to 'Edit my profile', edit_translator_path(current_user), :class => 'button mini inset black'
+          p = link_to 'Edit my profile', edit_translator_path(current_user.translator), :class => 'button mini inset black'
+          - if !(/missing+/ =~ current_user.translator.avatar.url)
+            p = image_tag current_user.translator.avatar.url(:thumb), :class => "img-polaroid"
       .title
         = link_to 'See all translators', translators_path, :class => 'button mini inset'
     .pull-right.profile-menu-nav-collapse

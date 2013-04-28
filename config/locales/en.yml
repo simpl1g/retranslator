@@ -73,3 +73,9 @@ en:
     uk: Ukrainian
     ur: Urdu
     vi: Vietnamese
+  translator:
+    name: Name
+    description: Description
+    no_translators: There are no translators yet
+    languages: Known languages
+    known_list: List of known languages
