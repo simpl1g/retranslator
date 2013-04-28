@@ -8,6 +8,6 @@
             span.bfh-languages data-language="#{lang.name}_#{lang.name.upcase}" data-flags="true" = lang.title
 
     td.action-links
-      - if current_user.id == translator.user.id
+      - if translator && current_user.id == translator.user_id
         = link_to t(:edit), edit_translator_path(translator)
         = link_to t(:destroy), translator_path(translator), method: :delete, data: { confirm: t(:are_you_sure) }
