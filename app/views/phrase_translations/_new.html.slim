@@ -1,3 +1,3 @@
-td
+td data-url="#{project_locale_file_phrase_phrases_translation_path(@project, @locale_file, @phrase, 0)}"
   = simple_nested_form_for @phrase_translation, :url=>project_locale_file_phrase_phrases_translations_path, :html => { :class => 'fill-up' } do |form|
     =render :partial=>"phrase_translations/form", :object=>form
