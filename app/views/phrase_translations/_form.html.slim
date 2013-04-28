@@ -3,4 +3,4 @@
   = form.input :value
 .padded
   p = form.button :submit, :class => "button green"
-  p = link_to t(:cancel), projects_path, :class => "button blue", :style =>'width:100%'
+  p = link_to t(:cancel), projects_path, :class => "button blue", :style =>'width:100%', :onclick=>"loadTranslations($(this).parent().parent().parent().parent());return false;"
