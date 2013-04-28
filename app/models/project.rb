@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-  attr_accessible :title, :description, :locale_files_attributes, :project_type
+  attr_accessible :title, :description, :project_languages_attributes, :project_type
 
   validates :title, :presence => true
 
@@ -14,7 +14,7 @@ class Project < ActiveRecord::Base
 
   belongs_to :user
 
-  accepts_nested_attributes_for :locale_files, :allow_destroy => true
+  accepts_nested_attributes_for :project_languages, :allow_destroy => true
 
   enumerate :project_type, :with => ProjectType
 

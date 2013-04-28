@@ -16,3 +16,6 @@
 //= require projects
 //= require jquery-fileupload/basic
 //= require translations
+//= require bootstrap-formhelpers-countries
+//= require bootstrap-formhelpers-languages
+//= require bootstrap-formhelpers-languages.codes

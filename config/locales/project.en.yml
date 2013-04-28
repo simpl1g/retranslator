@@ -7,3 +7,6 @@ en:
     translators:
       add: 'Add Translator'
       remove: 'Remove Translator'
+    language:
+      add_new: 'Add language'
+      remove: 'Remove language'

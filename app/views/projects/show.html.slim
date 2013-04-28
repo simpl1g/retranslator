@@ -24,4 +24,9 @@
             table.table.table-stripped.table-bordered
               = render :partial => 'translators', :locals => {:translators => @project.translators}
 
+          .black-box.well
+            - @project.languages.each do |lang|
+              span.bfh-languages data-language="#{lang.name}_#{lang.name.upcase}" data-flags="true"
+              br
+
 = render 'project/translators/add'
