@@ -36,6 +36,7 @@ class TranslatorController < ApplicationController
 
     respond_to do |format|
       if @translator.save
+        current_user.update_attributes :role => Role[:translator]
         format.html { redirect_to translators_path, notice: 'Translator was successfully created.' }
         format.json { render json: @translator, status: :created, location: @translator }
       else
@@ -50,6 +51,7 @@ class TranslatorController < ApplicationController
 
     respond_to do |format|
       if @translator.update_attributes(params[:translator])
+        current_user.update_attributes :role => Role[:translator]
         format.html { redirect_to @translator, notice: 'Translator was successfully updated.' }
         format.json { head :no_content }
       else
