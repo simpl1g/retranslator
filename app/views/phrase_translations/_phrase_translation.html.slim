@@ -1,6 +1,6 @@
 tr
   td.language
-    span.bfh-languages data-language="#{phrase_translation.language.name}_#{phrase_translation.language.name.upcase}" data-flags="true"
+    span.bfh-languages data-language="#{phrase_translation.language.name}_#{phrase_translation.language.name.upcase}" data-id="#{phrase_translation.language.name}" data-flags="true"
   - unless phrase_translation.id.blank?
     td  onclick="loadTranslations(this);" data-url="#{edit_project_locale_file_phrase_phrases_translation_path(@project, @locale_file, phrase_translation.phrase, phrase_translation)}" = phrase_translation.value
   - else
