@@ -18,3 +18,4 @@
 //= require bootstrap-formhelpers-countries
 //= require bootstrap-formhelpers-languages
 //= require bootstrap-formhelpers-languages.codes
+//= require custom_plugins/jquery.dynamic_selectable
