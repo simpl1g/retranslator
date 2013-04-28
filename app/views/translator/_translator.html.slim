@@ -4,7 +4,8 @@
     td
       ul
         - translator.languages.each do |lang|
-          li = lang.title
+          li
+            span.bfh-languages data-language="#{lang.name}_#{lang.name.upcase}" data-flags="true" = lang.title
 
     td.action-links
       - if current_user.id == translator.user.id

@@ -8,5 +8,6 @@
     table.table
       - @translator.languages.each do |language|
         tr
-          td = language.title
+          td
+            span.bfh-languages data-language="#{language.name}_#{language.name.upcase}" data-flags="true" = language.title
           td = LanguageLevel[language.level]

@@ -7,14 +7,14 @@
         = f.input :title, :label => t(:project_title)
         = f.input :description, input_html: { rows: 8 }, :label => t(:description)
         = f.fields_for :project_languages do |lang_form|
-          /.bfh-selectbox.bfh-languages data-language="en_US" data-flags="true">
-          /  input type="hidden"
-          /  a.bfh-selectbox-toggle role="button" data-toggle="bfh-selectbox" href="#"
-          /    span.bfh-selectbox-option.input-medium data-option=""
-          /    b.caret
-          /  .bfh-selectbox-options
-          /  div role="listbox"
-          /    ul role="option"
+          / .bfh-selectbox.bfh-languages data-language="en_US" data-flags="true"
+          /   input type="hidden"
+          /     a.bfh-selectbox-toggle role="button" data-toggle="bfh-selectbox" href="#"
+          /       span.bfh-selectbox-option.input-medium data-option=""
+          /       b.caret
+          /     .bfh-selectbox-options
+          /       div role="listbox"
+          /         ul role="option"
           = lang_form.select :language_id, options_for_select(Language.all.map { |lang| [t(lang.name, :scope => 'language'), lang.id] })
           = lang_form.link_to_remove :class => 'button red' do
             = t('project.language.remove')
