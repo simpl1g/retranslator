@@ -14,6 +14,8 @@ nav#secondary.main-nav
         i.icon-reorder
     .clear
   ul.secondary-nav-menu
-    = nav_link "icon-dashboard", 'Add project', new_project_path
-
-    = nav_link "icon-dashboard", 'View all projects', projects_path
+    - unless content_for?(:left_menu)
+      = nav_link "icon-dashboard", 'Add project', new_project_path
+      = nav_link "icon-dashboard", 'View all projects', projects_path
+    - else
+      = yield(:left_menu)

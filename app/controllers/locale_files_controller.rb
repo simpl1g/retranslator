@@ -1,4 +1,4 @@
-class Project::LocaleFilesController < ApplicationController
+class LocaleFilesController < ApplicationController
   before_filter :find_project
   before_filter :find_locale_file, :except => [:index, :create]
 
@@ -7,7 +7,7 @@ class Project::LocaleFilesController < ApplicationController
   end
 
   def show
-
+    @phrases = @locale_file.phrases.roots
   end
 
   def destroy

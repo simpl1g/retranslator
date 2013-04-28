@@ -1,0 +1,9 @@
+.row-fluid
+  .span3
+    .nav-menu.box
+      .nav.nav-list
+        li.nav-header Phrases
+        - if phrase
+          li
+            = nav_link " icon-arrow-left", "back", ""
+        = render :partial => "phrases/phrase", :collection => phrases
