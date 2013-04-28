@@ -2,12 +2,18 @@ nav#secondary.main-nav
   .profile-menu
     .logo.pull-left
       h3 = t(:retranslator)
-    .pull-left
-      .subtitle
-        p = current_user.email
-
-    .subtitle
-      | Your role: #{Role[current_user.role]}
+    .pull-left.span
+      - unless current_user.is? :translator
+        .subtitle
+          p = current_user.email
+        .title
+          = link_to 'Become a translator', new_translator_path, :class => 'button mini inset black'
+      - else
+        .subtitle
+          | Your role: #{Role[current_user.role]}
+          = link_to 'Edit my profile', edit_translator_path(current_user), :class => 'button mini inset black'
+      .title
+        = link_to 'See all translators', translators_path, :class => 'button mini inset'
 
     .pull-right.profile-menu-nav-collapse
       button.button.black

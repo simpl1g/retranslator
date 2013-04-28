@@ -15,6 +15,7 @@ gem 'jquery-rails'
 gem 'fancybox-rails'
 gem 'gon'
 gem 'carrierwave'
+gem 'paperclip'
 
 group :assets do
   gem 'sass-rails',    :git => 'git://github.com/rails/sass-rails.git', :branch => '3-2-stable'
