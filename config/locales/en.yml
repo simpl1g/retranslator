@@ -16,6 +16,8 @@ en:
       owner: Owner
   links:
     add_files: Add files
+  labels:
+    click_to_enter_translation: Click to enter translation
   no_projects: No projects created yet
   new_project: New project
   actions: Actions

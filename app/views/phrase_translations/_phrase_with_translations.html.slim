@@ -1,3 +1,10 @@
 tr
-  td
+  td colspan=2
+    ul.breadcrumb
+      - path = phrase_with_translations.path
+      - path.each do |phrase|
+        - if phrase == path.last
+          li.active = link_to phrase.name, ""
+        - else
+          li = link_to phrase.name, ""
 = render :partial => "phrase_translations/phrase_translation", :collection =>phrase_with_translations.phrase_translations_by_languages

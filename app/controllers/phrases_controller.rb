@@ -6,8 +6,8 @@ class PhrasesController < ApplicationController
 
   def show
     if @phrase.complicated?
-      @phrases = @phrase.children
-      @phrases_with_translations = @phrase.descendants.limit(5)
+      @phrases = @phrase.children.sort { |a, b| [b.complicated? ? 1 : 0, a.name]<=>[a.complicated? ? 1 : 0, b.name] }
+      @phrases_with_translations = @phrase.descendants.where(:complicated=>false).limit(5)
     else
       @phrases_with_translations = [@phrase]
     end
