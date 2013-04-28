@@ -9,3 +9,8 @@ $ ->
 
   $('#add-translator-modal.modal').on 'hide', ->
     $('#translator').hide()
+
+  $('#new_locale_file').fileupload
+    dataType: "script"
+    add: (e, data) ->
+      data.submit()

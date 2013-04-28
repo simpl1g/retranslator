@@ -10,6 +10,10 @@ class LocaleFilesController < ApplicationController
     @phrases = @locale_file.phrases.roots
   end
 
+  def create
+    @locale_file = @project.locale_files.create(:file => params[:file])
+  end
+
   def destroy
     @locale_file.destroy
   end

@@ -14,3 +14,4 @@
 //= require jquery_nested_form
 //= require fancybox
 //= require projects
+//= require jquery-fileupload/basic

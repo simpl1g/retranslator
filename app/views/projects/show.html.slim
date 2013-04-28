@@ -12,9 +12,11 @@
           .black-box.well = @project.description
           h5 Files
           = render :partial => "locale_files/locale_files", :object => @project.locale_files
-          = link_to edit_project_path(@project), :class => 'button green' do
-            i.icon-plus
-            = t('links.add_files')
+          = form_tag project_locale_files_path(@project), :remote => true, :multipart => true do
+            span.button.fileinput-button
+              i.icon-plus
+              span Add files...
+              = file_field_tag :file, :id => "new_locale_file", :multiple => true
 
         .span4
           .black-box.well
