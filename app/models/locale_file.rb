@@ -35,7 +35,7 @@ class LocaleFile < ActiveRecord::Base
           add_phrases(user, element, language, phrase)
         end
       when "Hash"
-        phrase = add_complicated_phrase(key)
+        phrase = add_complicated_phrase(key, parent)
         logger.debug("user=#{user}, value=#{value}, language=#{language}, phrase=#{phrase}")
         add_phrases(user, value, language, phrase)
       else
@@ -48,8 +48,8 @@ class LocaleFile < ActiveRecord::Base
     phrase = phrases.create(:name => key, :complicated => false, :parent => parent, :phrase_translations_attributes => [{:value => value, :user_id => user.id, :language_id => language.id}])
   end
 
-  def add_complicated_phrase(key)
-    phrase = phrases.create(:name => key, :complicated => true)
+  def add_complicated_phrase(key, parent=nil)
+    phrase = phrases.create(:name => key, :complicated => true, :parent=>parent)
   end
 
 

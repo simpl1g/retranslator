@@ -1,3 +1,8 @@
 tr
-  td = phrase_translation.language.name
-  td = phrase_translation.value
+  td.language = phrase_translation.language.name
+  - unless phrase_translation.value.blank?
+    td = phrase_translation.value
+  - else
+    td.empty-translations
+      i.icon-pencil
+      = t('labels.click_to_enter_translation')
