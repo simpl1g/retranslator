@@ -23,4 +23,6 @@ Retranslator::Application.routes.draw do
   root :to => 'welcome#index'
 
   match '/dashboard' => 'static_pages#dashboard', :as => :dashboard
+
+  resources :translators, :controller => 'translator'
 end

@@ -1,0 +1,19 @@
+.row-fluid
+  .tabbable.black-box.span7
+    .tab-header Become a translator
+    = simple_nested_form_for @translator, :html => { :class => 'fill-up' } do |f|
+      = f.error_notification
+      .padded
+        = f.input :name
+        = f.input :description, input_html: { rows: 8 }
+        = f.file_field :avatar, :class => 'file_field'
+        = f.fields_for :languages do |language|
+          = language.select :name, :collection => Language.languages_for_select
+          = language.link_to_remove "Remove this language"
+        = f.link_to_add :languages do
+          i.icon-plus
+          | Add another language
+
+      .padded
+        p = f.button :submit, :class => "button green"
+        p = link_to t(:back), translators_path, :class => "button blue", :style =>'width:100%'

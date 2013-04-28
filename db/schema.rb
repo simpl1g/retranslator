@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130427221757) do
+ActiveRecord::Schema.define(:version => 20130427222509) do
 
   create_table "languages", :force => true do |t|
     t.string "name", :limit => 10
@@ -101,8 +101,13 @@ ActiveRecord::Schema.define(:version => 20130427221757) do
   create_table "translators", :force => true do |t|
     t.integer  "user_id"
     t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.string   "name"
   end
 
   add_index "translators", ["user_id"], :name => "index_translators_on_user_id", :unique => true

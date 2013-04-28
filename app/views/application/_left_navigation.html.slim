@@ -5,9 +5,11 @@ nav#secondary.main-nav
     .pull-left
       .subtitle
         p = current_user.email
-
     .subtitle
       | Your role: #{Role[current_user.role]}
+    .title
+      .span
+        = link_to 'Become a translator', new_translator_path, :class => 'button mini inset black'
 
     .pull-right.profile-menu-nav-collapse
       button.button.black
