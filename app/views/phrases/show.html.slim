@@ -1,1 +1,3 @@
-= render :partial => "phrases/phrases", :object => @phrases, :locals=>{:phrase=>nil}
+.row-fluid
+  = render :partial => "phrases/phrases", :object => @phrases, :locals=>{:phrase=>@phrase}
+  = render :partial => "phrase_translations/phrases_with_translations", :object => @phrases_with_translations
