@@ -1,6 +1,17 @@
 = form.error_notification
 .padded
   = form.input :value
+  = form.input :language_id, :as => :hidden, :input_html => {:value => @language.id}
+  .well
+    span = @translation
+    .btn-group.pull-right
+      button.button.black.mini.edit
+        i.icon-pencil
+        | Edit
+      button.button.black.mini.approve
+        i.icon-ok
+        | Approve
+
 .padded
   p = form.button :submit, :class => "button green"
-  p = link_to t(:cancel), projects_path, :class => "button blue", :style =>'width:100%', :onclick=>"loadTranslations($(this).parent().parent().parent().parent());return false;"
+  p = link_to t(:cancel), projects_path, :class => "button blue cancel-translate", :style =>'width:100%'

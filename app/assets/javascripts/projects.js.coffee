@@ -1,7 +1,6 @@
 $ ->
   $('.dynamic-selectable').dynamicSelectable()
   $('#add-translator').on 'click', ->
-    console.log 'test'
     $('#add-translator-modal').modal('show')
 
   $('#language').on 'change', ->
@@ -14,3 +13,16 @@ $ ->
     dataType: "script"
     add: (e, data) ->
       data.submit()
+
+  $('body').on 'click', 'button.edit', (e) ->
+    e.preventDefault()
+    $('#phrase_translation_value').val($(this).parent().prev().text())
+
+  $('body').on 'click', 'button.approve', (e) ->
+    e.preventDefault()
+    $('#phrase_translation_value').val($(this).parent().prev().text())
+    $(this).parents('.padded').next().find('input').click()
+
+  $('body').on 'click', '.cancel-translate', (e) ->
+    e.preventDefault()
+    loadTranslations($(this).closest('td'))

@@ -12,10 +12,12 @@ class PhrasesTranslationsController < ApplicationController
 
   def new
     @phrase_translation = @phrase.phrase_translations.build
+    @translation = TRANSLATOR.translate @phrase.phrase_translations.where(:language_id => english_id).first.value, :from => 'en', :to => @language.name
     render :partial => 'phrase_translations/new'
   end
 
   def edit
+    @translation = TRANSLATOR.translate @phrase.phrase_translations.where(:language_id => english_id).first.value, :from => 'en', :to => @language.name
     render :partial => 'phrase_translations/edit'
   end
 
@@ -24,7 +26,8 @@ class PhrasesTranslationsController < ApplicationController
   end
 
   def create
-    render :partial => 'phrase_translations/show'
+    @phrase_translation = @phrase.phrase_translations.create(params[:phrase_translation].merge(:user_id => current_user.id))
+    redirect_to :back
   end
 
   def index
@@ -38,7 +41,11 @@ class PhrasesTranslationsController < ApplicationController
   private
 
   def load_language
-    @language = Language.find_by_name("ru")
+    @language = Language.find_by_name(params[:language])
+  end
+
+  def english_id
+    Language.find_by_name("en").id
   end
 
   def load_related_translations
