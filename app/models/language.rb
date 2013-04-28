@@ -6,4 +6,16 @@ class Language < ActiveRecord::Base
   attr_accessible :name
   validates :name, :presence => true
 
+  def title
+    I18n.t("language.#{name}")
+  end
+
+
+  def self.languages_for_select
+    result = []
+    Language.all.each do |language|
+      result << [language.title, language.id]
+    end
+    result
+  end
 end
