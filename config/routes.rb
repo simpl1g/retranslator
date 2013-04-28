@@ -5,7 +5,12 @@ Retranslator::Application.routes.draw do
       resources :translators
     end
     resources :locale_files do
-      resources :phrases
+      resources :phrases_translations
+      resources :phrases do
+        resources :phrases_translations do
+
+        end
+      end
     end
   end
 

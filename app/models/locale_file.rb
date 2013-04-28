@@ -2,6 +2,7 @@ class LocaleFile < ActiveRecord::Base
   mount_uploader :file, LocaleFileUploader
   belongs_to :project
   has_many :phrases, :dependent => :destroy
+  has_many :phrase_translations, :through => :phrases
 
   validates :file_type, :presence => true
   validates_inclusion_of :file_type, :in => FileType
