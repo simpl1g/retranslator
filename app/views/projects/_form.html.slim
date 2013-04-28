@@ -6,12 +6,6 @@
       .padded
         = f.input :title, :label => t(:project_title)
         = f.input :description, input_html: { rows: 8 }, :label => t(:description)
-        = f.fields_for :locale_files do |attachments_form|
-          = attachments_form.input :file, :as => :file
-          = attachments_form.link_to_remove :class => 'button red' do
-            = t('project.files.remove')
-        = f.link_to_add :locale_files, :class => 'button' do
-            = t('project.files.add_new')
         p = f.input :project_type, :default => 1, :label => t(:type)
       .padded
         p = f.button :submit, :class => "button green"
