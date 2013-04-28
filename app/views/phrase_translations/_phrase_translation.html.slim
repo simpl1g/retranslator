@@ -1,8 +1,8 @@
 tr
   td.language = phrase_translation.language.name
-  - unless phrase_translation.value.blank?
-    td = phrase_translation.value
+  - unless phrase_translation.id.blank?
+    td  onclick="loadTranslations(this);" data-url="#{edit_project_locale_file_phrase_phrases_translation_path(@project, @locale_file, phrase_translation.phrase, phrase_translation)}" = phrase_translation.value
   - else
-    td.empty-translations
+    td.empty-translations  onclick="loadTranslations(this);" data-url="#{new_project_locale_file_phrase_phrases_translation_path(@project, @locale_file, phrase_translation.phrase)}"
       i.icon-pencil
       = t('labels.click_to_enter_translation')
