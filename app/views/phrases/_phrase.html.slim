@@ -2,4 +2,4 @@ li
   - if phrase.complicated?
     = nav_link "icon-th-list", phrase.name, project_locale_file_phrase_path(@project, @locale_file, phrase)
   - else
-    = nav_link "icon-file", phrase.name, project_locale_file_phrase_path(@project, @locale_file, phrase)
+    = nav_link "icon-file", phrase.name, project_locale_file_phrase_path(@project, @locale_file, phrase), :remote=>true

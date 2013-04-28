@@ -1,9 +1,11 @@
-.row-fluid
-  .span3
-    .nav-menu.box
-      .nav.nav-list
-        li.nav-header Phrases
-        - if phrase
-          li
-            = nav_link " icon-arrow-left", "back", ""
-        = render :partial => "phrases/phrase", :collection => phrases
+.span3
+  .nav-menu.box
+    .nav.nav-list
+      li.nav-header Phrases
+      - if phrase
+        li
+          - if phrase.parent
+            = nav_link " icon-arrow-left", phrase.name, project_locale_file_phrase_path(@project, @locale_file, phrase.parent)
+          else
+            = nav_link " icon-arrow-left", phrase.name, project_locale_file_path(@project, @locale_file)
+      = render :partial => "phrases/phrase", :collection => phrases

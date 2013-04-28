@@ -16,8 +16,14 @@ class Phrase < ActiveRecord::Base
     end
   end
 
-  class << self
-
+  def phrase_translations_by_languages(languages=[])
+    unless self.complicated?
+      translations = self.phrase_translations
+      translations = translations.where(:language_id => languages.map(&:id)) unless languages.blank?
+      translations.sort_by(&:language_id)
+    else
+      []
+    end
   end
 
 end

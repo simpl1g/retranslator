@@ -8,6 +8,7 @@ class LocaleFilesController < ApplicationController
 
   def show
     @phrases = @locale_file.phrases.roots
+    @phrases_with_translations = @locale_file.phrases.where(:complicated=>false).limit(5)
   end
 
   def create

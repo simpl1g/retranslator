@@ -1,22 +1,21 @@
-class PhrasesController < ApplicationController
+class PhrasesTranslationsController < ApplicationController
   before_filter :find_project
   before_filter :find_locale_file
   before_filter :find_phrase, :only => [:show]
 
 
-  def show
-    if @phrase.complicated?
+  def index
+    if @phrase
       @phrases = @phrase.children
-      @phrases_with_translations = @phrase.descendants.limit(5)
     else
-      @phrases_with_translations = [@phrase]
+
     end
   end
 
   private
 
   def find_phrase
-    @phrase = @locale_file.phrases.find(params[:id])
+    @phrase = @locale_file.phrases.find(params[:phrase_id]) if params[:phrase_id]
   end
 
   def find_locale_file
