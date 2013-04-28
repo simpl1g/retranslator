@@ -13,6 +13,7 @@ class LocaleFilesController < ApplicationController
 
   def create
     @locale_file = @project.locale_files.create(:file => params[:file])
+    @locale_file.import_phrases(current_user)
   end
 
   def destroy
