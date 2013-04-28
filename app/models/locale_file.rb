@@ -15,7 +15,10 @@ class LocaleFile < ActiveRecord::Base
 
   before_validation :set_default_file_name
 
-  def import_phrases(user, hash, language)
+  def import_phrases(user, hash=nil, language=nil)
+    parser = ReTranslator::Parser::Ruby::Yaml.new(self.file.path)
+    language ||= Language.find_by_name(parser.locale)
+    hash ||= parser.phrases
     self.class.transaction do
       add_phrases(user, hash, language)
     end
