@@ -1,7 +1,6 @@
 nav#secondary.main-nav
   .profile-menu
     .logo.pull-left
-      h3 = t(:retranslator)
     .pull-left.span
       - unless current_user.is? :translator
         .subtitle
@@ -14,7 +13,6 @@ nav#secondary.main-nav
           = link_to 'Edit my profile', edit_translator_path(current_user), :class => 'button mini inset black'
       .title
         = link_to 'See all translators', translators_path, :class => 'button mini inset'
-
     .pull-right.profile-menu-nav-collapse
       button.button.black
         i.icon-reorder
