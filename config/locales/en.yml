@@ -32,6 +32,7 @@ en:
   retranslator: ReTranslator
   project_title: Project name
   type: Select a type of your project
+  cancel: Cancel
   language:
     ar: Arabic
     bg: Bulgarian

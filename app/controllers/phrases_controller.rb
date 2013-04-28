@@ -3,11 +3,10 @@ class PhrasesController < ApplicationController
   before_filter :find_locale_file
   before_filter :find_phrase, :only => [:show]
 
-
   def show
     if @phrase.complicated?
       @phrases = @phrase.children.sort { |a, b| [b.complicated? ? 1 : 0, a.name]<=>[a.complicated? ? 1 : 0, b.name] }
-      @phrases_with_translations = @phrase.descendants.where(:complicated=>false).limit(5)
+      @phrases_with_translations = @phrase.descendants.where(:complicated=>false).limit(20)
     else
       @phrases_with_translations = [@phrase]
     end

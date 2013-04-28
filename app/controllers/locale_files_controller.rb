@@ -8,7 +8,7 @@ class LocaleFilesController < ApplicationController
 
   def show
     @phrases = @locale_file.phrases.roots.sort { |a, b| [b.complicated? ? 1 : 0, a.name]<=>[a.complicated? ? 1 : 0, b.name] }
-    @phrases_with_translations = @locale_file.phrases.where(:complicated => false).limit(5)
+    @phrases_with_translations = @locale_file.phrases.where(:complicated => false).limit(20)
   end
 
   def create

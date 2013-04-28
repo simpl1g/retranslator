@@ -15,3 +15,4 @@
 //= require fancybox
 //= require projects
 //= require jquery-fileupload/basic
+//= require translations
